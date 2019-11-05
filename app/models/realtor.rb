@@ -1,2 +1,0 @@
-class Realtor < ApplicationRecord
-end

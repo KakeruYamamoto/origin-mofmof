@@ -69,6 +69,6 @@ class RealtorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def realtor_params
-      params.fetch(:realtor, {})
+      params.require(:realtor).permit(:house, :price, :address, :age, :remarkes)
     end
 end

@@ -12,6 +12,19 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+
+      <p>物件名</p>
+      <p><%= f.text_field :house %></p>
+      <p>賃料</p>
+      <p> <%= f.text_field :price %>円</p>
+      <p>住所</p>
+      <p><%= f.text_field :address %></p>
+      <p>築年数</p>
+      <p><%= f.text_field :age %>年</p>
+      <p>備考</p>
+      <p><%= f.text_area :remarkes %></p>
+      <p><%= f.submit %></p>
+    <% end %>
+
+
   </div>
-<% end %>

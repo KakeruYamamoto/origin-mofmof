@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Realtors</h1>
+<h1>物件一覧</h1>
 
 <table>
   <thead>
@@ -23,9 +23,9 @@
         <td><%= realtor.age %>年</td>
         <td><%= realtor.remarkes %></td>
 
-        <td><%= link_to 'Show', realtor %></td>
-        <td><%= link_to 'Edit', edit_realtor_path(realtor) %></td>
-        <td><%= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', realtor %></td>
+        <td><%= link_to '編集', edit_realtor_path(realtor) %></td>
+        <td><%= link_to '削除', realtor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Realtor', new_realtor_path %>
+<%= link_to '物件を登録する', new_realtor_path %>

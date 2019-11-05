@@ -1,28 +1,22 @@
 class RealtorsController < ApplicationController
   before_action :set_realtor, only: [:show, :edit, :update, :destroy]
 
-  # GET /realtors
-  # GET /realtors.json
   def index
     @realtors = Realtor.all
   end
 
-  # GET /realtors/1
-  # GET /realtors/1.json
   def show
   end
 
-  # GET /realtors/new
   def new
     @realtor = Realtor.new
+    @realtor.nearest_stations.build
+    1.times { @realtor.nearest_stations.build }
   end
 
-  # GET /realtors/1/edit
   def edit
   end
 
-  # POST /realtors
-  # POST /realtors.json
   def create
     @realtor = Realtor.new(realtor_params)
 
@@ -37,8 +31,6 @@ class RealtorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /realtors/1
-  # PATCH/PUT /realtors/1.json
   def update
     respond_to do |format|
       if @realtor.update(realtor_params)
@@ -51,8 +43,6 @@ class RealtorsController < ApplicationController
     end
   end
 
-  # DELETE /realtors/1
-  # DELETE /realtors/1.json
   def destroy
     @realtor.destroy
     respond_to do |format|
@@ -62,13 +52,14 @@ class RealtorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_realtor
       @realtor = Realtor.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+
     def realtor_params
-      params.require(:realtor).permit(:house, :price, :address, :age, :remarkes)
+      params.require(:realtor).permit(:house, :price, :address, :age, :remarkes,
+                                      nearests_tations_attributes: [:route_name, :station_name, :walking_minutes])
     end
 end

@@ -10,24 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191105070335) do
-
-  create_table "nearest_stations", force: :cascade do |t|
-    t.string   "route_name"
-    t.string   "station_name"
-    t.integer  "walking_minutes"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "properties", force: :cascade do |t|
-    t.string   "house"
-    t.integer  "price"
-    t.text     "address"
-    t.integer  "age"
-    t.text     "remarkes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

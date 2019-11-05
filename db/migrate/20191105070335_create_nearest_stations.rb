@@ -4,6 +4,7 @@ class CreateNearestStations < ActiveRecord::Migration[5.0]
       t.string :route_name
       t.string :station_name
       t.integer :walking_minutes
+      t.references :realtor, foreign_key: true
 
       t.timestamps
     end

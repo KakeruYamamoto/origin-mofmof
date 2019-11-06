@@ -10,8 +10,7 @@ class RealtorsController < ApplicationController
 
   def new
     @realtor = Realtor.new
-    @realtor.nearest_stations.build
-    1.times { @realtor.nearest_stations.build }
+    2.times { @realtor.nearest_stations.build }
   end
 
   def edit
@@ -19,7 +18,7 @@ class RealtorsController < ApplicationController
 
   def create
     @realtor = Realtor.new(realtor_params)
-    binding.irb
+
     respond_to do |format|
       if @realtor.save
         format.html { redirect_to @realtor, notice: 'Realtor was successfully created.' }
@@ -60,6 +59,6 @@ class RealtorsController < ApplicationController
 
     def realtor_params
       params.require(:realtor).permit(:house, :price, :address, :age, :remarkes,
-                                      nearests_tations_attributes: [:route_name, :station_name, :walking_minutes])
+                                      nearest_stations_attributes: [:route_name, :station_name, :walking_minutes])
     end
 end

@@ -6,7 +6,7 @@ class CreateRealtors < ActiveRecord::Migration[5.0]
       t.text :address
       t.integer :age
       t.text :remarkes
-      
+
       t.timestamps
     end
   end

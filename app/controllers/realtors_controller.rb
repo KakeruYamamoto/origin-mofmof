@@ -59,6 +59,6 @@ class RealtorsController < ApplicationController
 
     def realtor_params
       params.require(:realtor).permit(:house, :price, :address, :age, :remarkes,
-                                      nearest_stations_attributes: [:route_name, :station_name, :walking_minutes])
+                                      nearest_station_attributes: [:route_name, :station_name, :walking_minutes])
     end
 end

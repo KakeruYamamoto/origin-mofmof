@@ -1,11 +1,11 @@
 class RealtorsController < ApplicationController
   before_action :set_realtor, only: [:show, :edit, :update, :destroy]
-
   def index
     @realtors = Realtor.all
   end
 
   def show
+
   end
 
   def new
@@ -19,7 +19,7 @@ class RealtorsController < ApplicationController
 
   def create
     @realtor = Realtor.new(realtor_params)
-
+    binding.irb
     respond_to do |format|
       if @realtor.save
         format.html { redirect_to @realtor, notice: 'Realtor was successfully created.' }

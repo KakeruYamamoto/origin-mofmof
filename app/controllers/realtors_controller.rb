@@ -5,7 +5,6 @@ class RealtorsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -18,7 +17,6 @@ class RealtorsController < ApplicationController
 
   def create
     @realtor = Realtor.new(realtor_params)
-
     respond_to do |format|
       if @realtor.save
         format.html { redirect_to @realtor, notice: 'Realtor was successfully created.' }
@@ -56,9 +54,8 @@ class RealtorsController < ApplicationController
       @realtor = Realtor.find(params[:id])
     end
 
-
     def realtor_params
       params.require(:realtor).permit(:house, :price, :address, :age, :remarkes,
-                                      nearest_station_attributes: [:route_name, :station_name, :walking_minutes])
+                                      nearest_stations_attributes: [:route_name, :station_name, :walking_minutes])
     end
 end
